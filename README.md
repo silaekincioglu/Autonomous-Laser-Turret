@@ -1,6 +1,6 @@
 # Vision-Based Autonomous Laser Tracking & Pan-Tilt Targeting System
 
-An integrated computer vision and embedded robotics platform designed for autonomous object segmentation, real-time spatial coordinate mapping, and 3-DOF analytical inverse kinematics targeting via an actuated pan-tilt laser turret.
+An integrated computer vision and embedded robotics platform designed for autonomous object segmentation, real-time spatial coordinate mapping, and 3D Spatial Targeting with 2-DOF Inverse Kinematics analytical inverse kinematics targeting via an actuated pan-tilt laser turret.
 
 Author: Sila Ekincioglu  
 Project: Intelligent Robotics Project (Computer Engineering)
