@@ -1,6 +1,6 @@
 # Vision-Based Autonomous Laser Tracking & Pan-Tilt Targeting System
 
-An integrated computer vision and embedded robotics platform designed for autonomous object segmentation, real-time spatial coordinate mapping, and 2-DOF analytical inverse kinematics targeting via an actuated pan-tilt laser turret.
+An integrated computer vision and embedded robotics platform designed for autonomous object segmentation, real-time spatial coordinate mapping, and 3-DOF analytical inverse kinematics targeting via an actuated pan-tilt laser turret.
 
 Author: Sila Ekincioglu  
 Project: Intelligent Robotics Project (Computer Engineering)
@@ -32,11 +32,17 @@ This project delivers a closed-loop, deterministic electro-optical targeting sys
 
 ### Metric Spatial Mapping & Analytical Inverse Kinematics
 - Converts image space coordinates to real-world metric values ($X_{\text{cm}}, Y_{\text{cm}}$) using an optical offset center and scaled distance calibration:
+
   $$\text{Scale} = \frac{\text{Distance}}{365}$$
+
 - Models the physical turret using link-length constants ($l_1 = 3\text{ cm}, d_1 = 4\text{ cm}$) and computes pan ($\theta_1$) and tilt ($\theta_2$) servo angles using two-stage analytical atan2 formulations:
-  $$\theta_1 = \operatorname{atan2}(P_y, P_x)$$
+
+  $$\theta_1 = \text{atan2}(P_y, P_x)$$
+
   $$P_{x'} = P_x - l_1 \cdot \cos(\theta_1), \quad P_{z'} = P_z + d_1$$
-  $$\theta_2 = \pi - \operatorname{atan2}(P_{x'}, P_{z'})$$
+
+  $$\theta_2 = \pi - \text{atan2}(P_{x'}, P_{z'})$$
+
 - Enforces strict hardware angle clamping ($[0^\circ, 180^\circ]$) to safeguard servo gearboxes against out-of-bounds mechanical strain.
 
 ### Serial Protocol & Controlled Firing Sequence
